@@ -16,10 +16,30 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import TemplateView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/users/', include('users.urls')),
+    
+    # Social authentication
     path('api/auth/', include('dj_rest_auth.urls')),
     path('api/auth/registration/', include('dj_rest_auth.registration.urls')),
+    path('accounts/', include('allauth.urls')),
+    
+    # Password reset page
+    path('reset-password/<str:uid>/<str:token>/', 
+         TemplateView.as_view(template_name='users/password_reset.html'), 
+         name='password_reset_confirm'),
+    
+    # Google login page
+    path('login/google/', 
+         TemplateView.as_view(template_name='users/google_login.html'), 
+         name='google_login_page'),
 ]
+
+# Serve static files in development
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

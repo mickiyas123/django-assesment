@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .google-btn {
+            display: inline-block;
+            background-color: #4285F4;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .google-btn:hover {
+            background-color: #357AE8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign in with Google</h1>
+        <p>Click the button below to sign in or register with your Google account.</p>
+        
+        <a href="/accounts/google/login/?process=login" class="google-btn">
+            Sign in with Google
+        </a>
+    </div>
+</body>
+</html> 
