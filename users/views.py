@@ -178,4 +178,4 @@ class GoogleLoginView(SocialLoginView):
     """
     adapter_class = GoogleOAuth2Adapter
     client_class = OAuth2Client
-    callback_url = "http://localhost:8000/accounts/google/login/callback/"
+    callback_url = "http://localhost:8000/api/auth/callback/google"
